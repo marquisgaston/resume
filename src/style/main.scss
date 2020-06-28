@@ -1,0 +1,11 @@
+#resume-wrapper {
+    min-width: 100vw;
+    min-height: 200vh;
+}
+
+.page {
+    margin-top: 68px;
+}
+
+@import 'navbar.scss';
+@import 'homepage.scss';
