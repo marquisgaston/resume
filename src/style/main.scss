@@ -7,5 +7,9 @@
     margin-top: 68px;
 }
 
+.search-button:hover {
+    background-color: blue;
+}
+
 @import 'navbar.scss';
 @import 'homepage.scss';

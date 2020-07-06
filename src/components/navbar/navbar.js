@@ -10,25 +10,6 @@ import MainNav from './mainNav';
 import NavSearch from './navSearch';
 
 class NavbarComponent extends Component {
-    constructor(){
-        super()
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-   handleChange(event) {
-        this.setState ({
-            [event.target.name]: event.target.value
-        });
-    }
-
-    handleClick = () => {
-        if (this.state.searchText !== null && this.state.searchText.length > 0){
-            this.props.setSearchTerm(this.state.searchText);
-            history.push('/search')
-        } else {
-            return
-        }
-    }
 
     render() { 
         return ( 
