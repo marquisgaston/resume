@@ -14,7 +14,7 @@ class Resume extends Component {
                 <Navbar/>
                 <Router history={history}>
                     <Switch>
-                        <Route path="/" component={Homepage}/>
+                        <Route path="/" exact component={Homepage}/>
                         <Route component={NoMatch}/>
                     </Switch>
                 </Router>
