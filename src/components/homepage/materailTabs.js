@@ -7,6 +7,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+import SearchTab from './searchTab';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -42,8 +44,7 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    backgroundColor: "black",
+    flexGrow: 1
   },
 }));
 
@@ -57,18 +58,18 @@ export default function SimpleTabs() {
 
   return (
     <div className={`${classes.root} homeTabs`}>
-      <AppBar className="homeTabs__appBar" position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs" className="homeTabs__tabs">
+    <AppBar className="homeTabs__appBar" position="static">
+        <Tabs value={value} onChange={handleChange} indicatorColor="primary" aria-label="simple tabs" className="homeTabs__tabs">
           <Tab label="Home" {...a11yProps(0)} />
           <Tab label="Featured" {...a11yProps(1)} />
         </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        Home
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+    </AppBar>
+    <TabPanel value={value} index={0}>
+        <SearchTab/>
+    </TabPanel>
+    <TabPanel value={value} index={1}>
         Feautred
-      </TabPanel>
+    </TabPanel>
     </div>
   );
 }
