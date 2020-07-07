@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import HomeTabs from './homeTabs';
 
 class Homepage extends Component {
     state = {  }
@@ -13,7 +14,7 @@ class Homepage extends Component {
     render() { 
         return ( 
             <div className="homepage page">
-                Homepage Goes Here
+                <HomeTabs/>
             </div>
          );
     }
