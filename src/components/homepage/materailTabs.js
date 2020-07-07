@@ -56,9 +56,9 @@ export default function SimpleTabs() {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs" className="homeTabs">
+    <div className={`${classes.root} homeTabs`}>
+      <AppBar className="homeTabs__appBar" position="static">
+        <Tabs value={value} onChange={handleChange} aria-label="simple tabs" className="homeTabs__tabs">
           <Tab label="Home" {...a11yProps(0)} />
           <Tab label="Featured" {...a11yProps(1)} />
         </Tabs>

@@ -5,7 +5,7 @@ class HomeTabs extends Component {
     state = {  }
     render() { 
         return ( 
-           <div className="hometabs-wrapper"> 
+           <div className="homeTabs-wrapper"> 
                <MaterialTabs/>
            </div>
          );
