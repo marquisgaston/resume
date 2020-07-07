@@ -65,7 +65,7 @@ export default function SimpleTabs() {
         </Tabs>
     </AppBar>
     <TabPanel value={value} index={0}>
-        <SearchTab/>
+      <SearchTab/>
     </TabPanel>
     <TabPanel value={value} index={1}>
         Feautred

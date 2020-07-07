@@ -7,8 +7,13 @@ class SearchTab extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className="search-tab-wrapper">
-                Search Tab Component
+            <div className="search-tab">
+                <div className="search-tab__front">
+                    Search Tab Component
+                </div>
+                <div className="search-tab__back">
+                    Back
+                </div>
             </div>
          );
     }
