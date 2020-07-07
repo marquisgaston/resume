@@ -42,13 +42,13 @@ function a11yProps(index) {
   };
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1
   },
 }));
 
-export default function SimpleTabs() {
+export default function SimpleTabs() { 
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
