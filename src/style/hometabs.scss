@@ -37,8 +37,13 @@
             background-size: 100%;
             filter: brightness(50%);
 
-            @media only screen and (min-width: $min-phone-width){
+            @media only screen and (min-width: $min-tab-width){
                 background-image: url('https://source.unsplash.com/1920x1080');
+
+            }
+
+            @media only screen and (max-width: $min-tab-width){
+                background-image: url('https://source.unsplash.com/768x1080');
 
             }
 
