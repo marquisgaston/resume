@@ -59,7 +59,6 @@ export default function SimpleTabs() {
   return (
     <div className={`${classes.root} homeTabs`}>
       <div className="homeTabs__back">
-        homeTabs Back
       </div>
       <div className="homeTabs__front">
         <AppBar className="homeTabs__front__appBar" position="static">
@@ -74,7 +73,6 @@ export default function SimpleTabs() {
         <TabPanel value={value} index={1}>
             Feautred
         </TabPanel>
-        homeTabs front
       </div>
     </div>
   );

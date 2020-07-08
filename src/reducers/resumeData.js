@@ -9,7 +9,7 @@ const INITIAL_STATE = {
     yourPhone: "5673433654",
     yourMainSite: {
         name: "LinkedIn",
-        link: "https://www.linkedin.com/in/marquisgaston/"
+        link: "https://www.linkedin.com/in/marquisgaston"
     },
     resumeItems: [
         {

@@ -9,7 +9,7 @@ render() {
         return ( 
             <div className="search-tab-wrapper">
                 <div className="search-tab">
-                    Search Tab Component
+                    
                 </div>
             </div>
          );
