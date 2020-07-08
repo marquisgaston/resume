@@ -5,6 +5,8 @@ import {
 
 const INITIAL_STATE = {
     yourName: "Marquis J Gaston",
+    yourFirstName: "Marquis",
+    yourLastName: "Gaston",
     yourEmail: "MarquisGaston23@gmail.com",
     yourPhone: "5673433654",
     yourMainSite: {
