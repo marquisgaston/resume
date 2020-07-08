@@ -17,13 +17,13 @@ class MainNav extends Component {
      renderMainNav = () => {
         if(this.props.main.currentPage !== "homepage") {
              return (
-                  <Nav className="mr-auto">
+                  <Nav className="mr-auto" style={{backgroundColor: "inherit"}}>
                        <Nav.Link onClick={() => {history.push('/')}}>Home</Nav.Link>
                        <Nav.Link href="#link">Profile</Nav.Link>
                        <NavDropdown title="Contact" id="basic-nav-dropdown">
                             <NavDropdown.Item ><i className="fas fa-envelope"></i>{this.props.resumeData.yourEmail} </NavDropdown.Item>
                             <NavDropdown.Item ><i className="fas fa-phone-square-alt"></i>{this.phoneNumberDash(this.props.resumeData.yourPhone)}</NavDropdown.Item>
-                            <NavDropdown.Item href="https://www.linkedin.com/in/marquisgaston"><i class="fab fa-linkedin"></i> Linkedin</NavDropdown.Item>
+                            <NavDropdown.Item href={this.props.resumeData.yourMainSite.link}><i className="fab fa-linkedin"></i> {this.props.resumeData.yourMainSite.name}</NavDropdown.Item>
                        <NavDropdown.Divider />
                        {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                        </NavDropdown>
@@ -32,13 +32,13 @@ class MainNav extends Component {
         } else 
         {
              return (
-                  <Nav className="mr-auto">
+                  <Nav className="mr-auto" style={{backgroundColor: "inherit"}}>
                        {/* <Nav.Link href="#home">Home</Nav.Link> */}
                        <Nav.Link href="#link">Profile</Nav.Link>
                        <NavDropdown title="Contact" id="basic-nav-dropdown">
                             <NavDropdown.Item ><i className="fas fa-envelope"></i> {this.props.resumeData.yourEmail} </NavDropdown.Item>
                             <NavDropdown.Item ><i className="fas fa-phone-square-alt"></i> {this.phoneNumberDash(this.props.resumeData.yourPhone)}</NavDropdown.Item>
-                            <NavDropdown.Item href={this.props.resumeData.yourMainSite.link}><i className="fab fa-linkedin"></i> {this.props.resumeData.yourMainSite.link}</NavDropdown.Item>
+                            <NavDropdown.Item href={this.props.resumeData.yourMainSite.link}><i className="fab fa-linkedin"></i> {this.props.resumeData.yourMainSite.name}</NavDropdown.Item>
                        <NavDropdown.Divider />
                        {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                        </NavDropdown>
