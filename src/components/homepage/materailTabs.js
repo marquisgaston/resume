@@ -22,7 +22,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <Typography component={'span'}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -58,18 +58,24 @@ export default function SimpleTabs() {
 
   return (
     <div className={`${classes.root} homeTabs`}>
-    <AppBar className="homeTabs__appBar" position="static">
-        <Tabs value={value} onChange={handleChange} indicatorColor="primary" aria-label="simple tabs" className="homeTabs__tabs">
-          <Tab label="Home" {...a11yProps(0)} />
-          <Tab label="Featured" {...a11yProps(1)} />
-        </Tabs>
-    </AppBar>
-    <TabPanel value={value} index={0}>
-      <SearchTab/>
-    </TabPanel>
-    <TabPanel value={value} index={1}>
-        Feautred
-    </TabPanel>
+      <div className="homeTabs__back">
+        homeTabs Back
+      </div>
+      <div className="homeTabs__front">
+        <AppBar className="homeTabs__front__appBar" position="static">
+          <Tabs value={value} onChange={handleChange} indicatorColor="primary" aria-label="simple tabs" className="homeTabs__front__tabs">
+            <Tab label="Home" {...a11yProps(0)} />
+            <Tab label="Featured" {...a11yProps(1)} />
+          </Tabs>
+        </AppBar>
+        <TabPanel value={value} index={0}>
+          <SearchTab/>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+            Feautred
+        </TabPanel>
+        homeTabs front
+      </div>
     </div>
   );
 }

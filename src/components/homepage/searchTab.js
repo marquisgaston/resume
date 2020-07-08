@@ -5,14 +5,11 @@ import * as actions from '../../actions';
 
 class SearchTab extends Component {
     state = {  }
-    render() { 
+render() { 
         return ( 
-            <div className="search-tab">
-                <div className="search-tab__front">
+            <div className="search-tab-wrapper">
+                <div className="search-tab">
                     Search Tab Component
-                </div>
-                <div className="search-tab__back">
-                    Back
                 </div>
             </div>
          );

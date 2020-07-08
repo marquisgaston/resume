@@ -1,58 +1,54 @@
 .homeTabs-wrapper {
     max-width: 100vw;
+    position: relative;
 
     .homeTabs {
+        position: relative;
+        min-width: 100vw;
+        min-height: 100vh;   
 
-        background-repeat: no-repeat;               
-        background-size: 100%;
+        &__front {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
 
-        @media only screen and (min-width: $min-phone-width){
-            background-image: url('https://source.unsplash.com/1920x1080');
-
-        }
-
-        @media only screen and (max-width: $min-phone-width){
-            background-image: url('https://source.unsplash.com/1080x1920');
-
-        }
-
-        &__appBar {
-            background-color: rgba(0,0,0,.4);
-        }
-
-        &__tabs {
-            
-        }
-
-        .search-tab {
-            position: relative;
-            min-width: 100vw;
-            min-height: 100vh;            
-            
-            &__front {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                filter: brightness(100%);
-                min-width: 100vw;
-                min-height: 100vh; 
+            &__appBar {
+                background-color: rgba(0,0,0,.4);
+            }
+    
+            &__tabs {
                 
             }
-
-            &__back {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                filter: brightness(10%);
-                min-width: 100vw;
-                min-height: 100vh; 
+    
+            .search-tab {         
                 
             }
         }
+
+        &__back {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-repeat: no-repeat;               
+            background-size: 100%;
+            filter: brightness(50%);
+
+            @media only screen and (min-width: $min-phone-width){
+                background-image: url('https://source.unsplash.com/1920x1080');
+
+            }
+
+            @media only screen and (max-width: $min-phone-width){
+                background-image: url('https://source.unsplash.com/1080x1920');
+
+            }
+            
+        }
+
     }
 
     // .MuiTabs-scroller {
