@@ -5,6 +5,12 @@ import {
 
 const INITIAL_STATE = {
     yourName: "Marquis J Gaston",
+    yourEmail: "MarquisGaston23@gmail.com",
+    yourPhone: "5673433654",
+    yourMainSite: {
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/marquisgaston/"
+    },
     resumeItems: [
         {
             title: "Github",
