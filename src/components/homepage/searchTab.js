@@ -4,6 +4,8 @@ import { Carousel } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
+import SearchBar from './searchBar';
+
 class SearchTab extends Component {
     state = {  }
 render() { 
@@ -26,6 +28,7 @@ render() {
                             )
                         })}
                     </Carousel>
+                        <SearchBar/>
                 </div>
             </div>
          );
