@@ -28,7 +28,7 @@ render() {
                             )
                         })}
                     </Carousel>
-                        <SearchBar/>
+                    <SearchBar/>
                 </div>
             </div>
          );

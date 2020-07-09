@@ -1,7 +1,6 @@
 .search-tab {
     display: grid;
     justify-content: center;
-    grid-template-rows: 1fr .4fr .6fr 3fr;
 
     @media only screen and (min-width: $min-tab-width){
         margin-top: 2em;
@@ -18,21 +17,24 @@
         }
 
         @media only screen and (max-width: $min-phone-width){
-            font-size: .9em;
+            font-size: 1.2em;
         }
     }
 
     .search-box-wrapper {
-        display: flex;
 
-        @media only screen and (min-width: $min-tab-width){
-            margin-top: 2em;
-        }
-
-        @media only screen and (max-width: $min-tab-width){
-            margin-top: 1.5em;
-        }
+        .search-box {
+            display: flex;
     
+            @media only screen and (min-width: $min-tab-width){
+                margin-top: 2em;
+            }
+    
+            @media only screen and (max-width: $min-tab-width){
+                margin-top: 1.5em;
+            }
+        
+        }
     }
 
     .carousel-indicators {
