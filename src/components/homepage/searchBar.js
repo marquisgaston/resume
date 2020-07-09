@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { FormControl, Button } from 'react-bootstrap';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 // import axios from 'axios';
 import history from '../../history';
 
@@ -33,7 +35,7 @@ class SearchBar extends Component {
                 //             this.props.pullYoutubeItems(res.data.items)
                 //             console.log("res", res.data.items)
                 //         })
-                    history.push('/search')
+                history.push('/search')
             }
         } else {
             return
@@ -42,12 +44,15 @@ class SearchBar extends Component {
 
     render() { 
         return ( 
-            <form className="search-box-wrapper" submit={this.handleClick}>
+            <form className="search-box-wrapper" onSubmit={this.handleClick}>
                 <FormControl name="searchText" value={this.state.searchText} onChange={this.handleChange} type="text" placeholder="Search" style={{marginRight: "1em"}}/>
                 <Button className="search-button" variant="outline-success" type="submit" style={{borderColor: "white", color: "white", backgroundColor: `#3f51b5`}}>Search</Button>
             </form>
          );
     }
 }
+function mapStateToProps (state) {
+    return state
+}
  
-export default SearchBar;
+export default SearchBar = connect(mapStateToProps, actions)(SearchBar);

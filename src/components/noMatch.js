@@ -4,7 +4,7 @@ class NoMatch extends Component {
     state = {  }
     render() { 
         return ( 
-            <div style={{marginTop: "10em", display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <div className="no-match page" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh"}}>
                 This page doesn't exist
             </div>
          );
