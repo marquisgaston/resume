@@ -13,6 +13,33 @@ const INITIAL_STATE = {
         name: "LinkedIn",
         link: "https://www.linkedin.com/in/marquisgaston"
     },
+    quickLinks: [
+        {
+            title: "Profile",
+            url: "/profile",
+            icon: "fas fa-portrait"
+        },
+        {
+            title: "My Captone Project",
+            url: "https://minnmax.netlify.com/",
+            icon: "fab fa-napster"
+        },
+        {
+            title: "My School",
+            url: "https://www.bottega.tech",
+            icon: "fas fa-graduation-cap"
+        },
+        {
+            title: "My Resume",
+            url: "https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY",
+            icon: "fab fa-google-drive"
+        },
+        {
+            title: "My Projects",
+            url: "/projects",
+            icon: "fas fa-keyboard"
+        },
+    ],
     resumeItems: [
         {
             title: "Github",

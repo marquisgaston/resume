@@ -1,3 +1,30 @@
 .quick-search-wrapper {
-    
+    margin-top: 3em;
+
+    .quick-search {
+
+    }
+
+    .quick-links {
+        display: grid;
+
+        a {
+            text-decoration: none;
+            color: white;
+
+
+        }
+
+        @media only screen and (min-width: $min-tab-width){
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @media only screen and (max-width: $min-tab-width){
+            grid-template-columns: 1fr 1fr 1fr;
+         }
+
+         @media only screen and (max-width: $min-phone-width){
+            grid-template-columns: 1fr 1fr;
+         }
+    }
 }
