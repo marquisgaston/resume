@@ -84,7 +84,7 @@ class QuickSearch extends Component {
                 <div className="quick-search">
                     {listToRender.map(item => {
                         return (
-                            <div key={`${item.index}`} className="quick-search-item">
+                            <div key={`${item.index+item.title}`} className="quick-search-item">
                                 <a className="quick-search-item-link" href={item.url ? item.url : item.localUrl}>
                                 <div className="quick-search-item-sub-title">
                                     {item.subTitle ? item.subTitle : item.title}

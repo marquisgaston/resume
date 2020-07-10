@@ -36,7 +36,9 @@ class SearchBar extends Component {
                 //             this.props.pullYoutubeItems(res.data.items)
                 //             console.log("res", res.data.items)
                 //         })
-                history.push('/search')
+                var one = this.state.searchText.split(" ");
+                var two = one.join("+")
+                history.push(`/search=${two}`)
             }
         } else {
             return

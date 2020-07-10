@@ -4,6 +4,8 @@
 }
 
 .page {
+    min-width: 100vw;
+    min-height: 70vh;
 
     @media only screen and (min-width: $min-tabpro-width +1){
         margin-top: 86px;
