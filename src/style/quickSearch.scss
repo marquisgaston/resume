@@ -30,7 +30,7 @@
                 text-decoration: none;
                 color: white;
 
-                @media only screen and (min-width: $min-tabpro-width + 1){
+                @media only screen and (min-width: $min-tabpro-width +1){
                     grid-template-columns: max-content max-content max-content;
                     font-size: 1.4em;
 
@@ -63,7 +63,7 @@
     .quick-links {
         display: grid;
 
-        @media only screen and (min-width: $min-phone-width){
+        @media only screen and (min-width: $min-tabpro-width){
             font-size: 4em;
            grid-template-columns: 1fr 1fr 1fr 1fr;
         }

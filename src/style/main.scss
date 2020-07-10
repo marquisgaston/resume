@@ -4,7 +4,18 @@
 }
 
 .page {
-    margin-top: 78px;
+
+    @media only screen and (min-width: $min-tabpro-width +1){
+        margin-top: 86px;
+    }
+
+    @media only screen and (max-width: $min-tabpro-width){
+        margin-top: 80px;
+    }
+    
+    @media only screen and (max-width: $min-tab-width){
+        margin-top: 56px;
+    }
 }
 
 .search-button:hover {

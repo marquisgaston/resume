@@ -18,13 +18,13 @@
                 background-color: rgba(0,0,0,.4);
             }
     
-            &__tabs {
+            // &__tabs {
                 
-            }
+            // }
     
-            .search-tab {         
+            // .search-tab {         
                 
-            }
+            // }
         }
 
         &__back {
@@ -37,7 +37,7 @@
             background-size: 100%;
             filter: brightness(50%);
 
-            @media only screen and (min-width: $min-tabpro-width){
+            @media only screen and (min-width: $min-tabpro-width +1){
                 background-image: url('https://source.unsplash.com/1920x1080');
 
             }

@@ -17,7 +17,7 @@ class MainNav extends Component {
      renderMainNav = () => {
         if(this.props.main.currentPage !== "homepage") {
              return (
-                  <Nav className="mr-auto" style={{backgroundColor: "inherit"}}>
+                  <Nav className="mr-auto">
                        <Nav.Link onClick={() => {history.push('/')}}>Home</Nav.Link>
                        <Nav.Link href="#link">Profile</Nav.Link>
                        <NavDropdown title="Contact" id="basic-nav-dropdown">
@@ -32,7 +32,7 @@ class MainNav extends Component {
         } else 
         {
              return (
-                  <Nav className="mr-auto" style={{backgroundColor: "inherit"}}>
+                  <Nav className="mr-auto" id="navbar-nav">
                        {/* <Nav.Link href="#home">Home</Nav.Link> */}
                        <Nav.Link href="#link">Profile</Nav.Link>
                        <NavDropdown title="Contact" id="basic-nav-dropdown">

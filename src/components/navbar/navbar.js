@@ -16,7 +16,7 @@ class NavbarComponent extends Component {
                 <Navbar id="main-navbar"  variant="dark" fixed="top" expand="lg" width="100vw">  
                          <NavbarBrand/>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav" style={{backgroundColor: "inherit"}}>
+                    <Navbar.Collapse id="basic-navbar-nav">
                          <MainNav/>
                          <NavSearch/>
                     </Navbar.Collapse>

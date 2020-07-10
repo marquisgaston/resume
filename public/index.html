@@ -52,14 +52,13 @@
         // document.getElementById("titleBar").style.top = "-70px";
         window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
-        document.getElementById("main-navbar").style.backgroundColor = "#282c34";
         const navbar = document.getElementById("main-navbar");
           if (window.pageYOffset < 1 ) {        
             document.getElementById("navbar-brand-homepage").style.display = "none";
             document.getElementById("main-navbar").style.backgroundColor = "#282c34";
           } else {
             document.getElementById("navbar-brand-homepage").style.display = "flex";
-            document.getElementById("main-navbar").style.backgroundColor = "black";      
+            document.getElementById("main-navbar").style.backgroundColor = "#282c34";      
           }
           prevScrollpos = currentScrollPos;
         }

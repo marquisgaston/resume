@@ -2,13 +2,13 @@
     display: grid;
     justify-content: center;
 
-    @media only screen and (min-width: $min-tab-width){
+    @media only screen and (min-width: $min-tabpro-width +1){
         margin-top: 2em;
     }
 
     &__title {
 
-        @media only screen and (min-width: $min-tabpro-width){
+        @media only screen and (min-width: $min-tabpro-width +1){
             font-size: 4em;
         }
 
@@ -30,7 +30,7 @@
         .search-box {
             display: flex;
     
-            @media only screen and (min-width: $min-tab-width){
+            @media only screen and (min-width: $min-tab-width +1){
                 margin-top: 2em;
             }
     
