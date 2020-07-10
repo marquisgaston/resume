@@ -81,7 +81,7 @@ class QuickSearch extends Component {
         })
         const listToRender = newList.concat(newList2, newList3);
 
-            if (this.props.searchText.length > 0){
+           
                 return (
                     <div className="quick-search">
                         {listToRender.slice(0,7).map(item => {
@@ -105,33 +105,35 @@ class QuickSearch extends Component {
                         })}
                     </div>
                 )
-            } else {
-                return (
-                    <div className="quick-links">
-                        <a className="quick-link-wrapper" href="https://www.github.com/marquisgaston">
-                            <div className="quick-link" >
-                            <i className="fab fa-github"></i>
-                            <h5>My Github</h5>
-                            </div>
-                        </a>
-                        <a className="quick-link-wrapper" href="https://www.linkedin.com/in/marquisgaston">
-                            <div className="quick-link" >
-                            <i className="fab fa-linkedin"></i>
-                            <h5>My LinkedIn</h5>
-                            </div>
-                        </a>
-                        {this.renderQuickLinks()}
-                    </div>
-                )
-            }
+            
     }
 
     render() { 
-        return ( 
-            <div className="quick-search-wrapper">
-                {this.renderQuickSearch()}
-            </div>
-         );
+        if (this.props.searchText.length > 0){
+            return ( 
+                <div className="quick-search-wrapper">
+                    {this.renderQuickSearch()}
+                </div>
+            );
+        } else {
+            return (
+                <div className="quick-links">
+                    <a className="quick-link-wrapper" href="https://www.github.com/marquisgaston">
+                        <div className="quick-link" >
+                        <i className="fab fa-github"></i>
+                        <h5>My Github</h5>
+                        </div>
+                    </a>
+                    <a className="quick-link-wrapper" href="https://www.linkedin.com/in/marquisgaston">
+                        <div className="quick-link" >
+                        <i className="fab fa-linkedin"></i>
+                        <h5>My LinkedIn</h5>
+                        </div>
+                    </a>
+                    {this.renderQuickLinks()}
+                </div>
+            )
+        }
     }
 }
 function mapStateToProps(state){
