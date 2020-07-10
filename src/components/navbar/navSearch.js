@@ -40,9 +40,9 @@ class NavSearch extends Component {
     renderSearchBar = () => {
         if(this.props.main.currentPage !== "homepage") {
             return (
-                <Form inline >
+                <Form inline onSubmit={this.handleClick} >
                     <FormControl name="searchText" value={this.state.searchText} onChange={this.handleChange} type="text" placeholder={this.props.main.searchTerm ? this.props.main.searchTerm : "Search"} className="mr-sm-2" />
-                    <Button className="search-button" variant="outline-success navbar-search" onClick={this.handleClick} style={{color: "white", borderColor: "white"}}>Search</Button>
+                    <Button className="search-button" variant="outline-success navbar-search" type="submit" style={{color: "white", borderColor: "white"}}>Search</Button>
                 </Form>
              )
         } else 
