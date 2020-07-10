@@ -79,33 +79,30 @@ class QuickSearch extends Component {
             }
             return newList
         })
-        const listToRender = newList.concat(newList2, newList3);
-
-           
-                return (
-                    <div className="quick-search">
-                        {listToRender.slice(0,7).map(item => {
-                            return (
-                                <div key={`${item.index}`} className="quick-search-item">
-                                    <a className="quick-search-item-link" href={item.url ? item.url : item.localUrl}>
-                                    <div className="quick-search-item-sub-title">
-                                        {item.subTitle ? item.subTitle : item.title}
-                                    </div>
-                                    {item.subTitle ? <div className="quick-search-item-title">
-                                        {item.subTitle ? item.title : null}
-                                    </div> : null}
-                                    {item.url ? 
-                                        <div className="quick-search-item-url">
-                                            {item.url.length > 40 ? `${item.url.slice(0,40)}...` : item.url}
-                                        </div>
-                                    : null}                                
-                                    </a>
+        const listToRender = newList.concat(newList2, newList3);       
+            return (
+                <div className="quick-search">
+                    {listToRender.map(item => {
+                        return (
+                            <div key={`${item.index}`} className="quick-search-item">
+                                <a className="quick-search-item-link" href={item.url ? item.url : item.localUrl}>
+                                <div className="quick-search-item-sub-title">
+                                    {item.subTitle ? item.subTitle : item.title}
                                 </div>
-                            )
-                        })}
-                    </div>
-                )
-            
+                                {item.subTitle ? <div className="quick-search-item-title">
+                                    {item.subTitle ? item.title : null}
+                                </div> : null}
+                                {item.url ? 
+                                    <div className="quick-search-item-url">
+                                        {item.url.length > 40 ? `${item.url.slice(0,40)}...` : item.url}
+                                    </div>
+                                : null}                                
+                            </a>
+                        </div>
+                    )
+                })}
+            </div>
+        )
     }
 
     render() { 
