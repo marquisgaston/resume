@@ -2,7 +2,31 @@
     margin-top: 3em;
 
     .quick-search {
+        color: white;
+        background-color: $bg-color;
+        border-radius: 10px;
+        padding: 1em;
+        max-width: 95vw;
 
+        display: grid;
+        gap: .5em;
+
+        &-item {
+            
+            a {
+                display: grid;
+                gap: 0 2em;
+
+                @media only screen and (min-width: $min-tab-width + 1){
+                    grid-template-columns: max-content max-content max-content;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
     }
 
     .quick-links {

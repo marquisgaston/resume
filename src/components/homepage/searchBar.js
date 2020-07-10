@@ -13,7 +13,7 @@ class SearchBar extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-        searchText: ""
+        searchText: "all"
     }
     }
 

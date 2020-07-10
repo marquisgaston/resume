@@ -86,14 +86,14 @@ class QuickSearch extends Component {
                     {newList.map(item => {
                         return (
                             <div key={`${item.index}`} className="quick-search-item">
-                                <a className="quick-search-link" href={item.url ? item.url : item.localUrl}>
-                                <div className="title">
-                                    {item.title}
-                                </div>
-                                {item.subTitle ? <div className="sub-title">
+                                <a className="quick-search-item-link" href={item.url ? item.url : item.localUrl}>
+                                <div className="quick-search-item-title">
                                     {item.subTitle}
+                                </div>
+                                {item.subTitle ? <div className="quick-search-item-sub-title">
+                                    {item.title}
                                 </div> : null}
-                                {item.url ? <div className="url">
+                                {item.url ? <div className="quick-search-item-url">
                                     {item.url}
                                 </div> : null}                                
                                 </a>
