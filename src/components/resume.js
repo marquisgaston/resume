@@ -7,6 +7,7 @@ import Navbar from './navbar/navbar';
 import Homepage from './homepage/homepage';
 import Footer from './footer/footer';
 import SearchResults from './search-results/searchResults';
+import NoSearchTerm from './search-results/noSearchTerm';
 
 class Resume extends Component {
     state = {  }
@@ -18,6 +19,7 @@ class Resume extends Component {
                     <Switch>
                         <Route path="/" exact component={Homepage}/>
                         <Route path="/search:slug" exact component={SearchResults}/>
+                        <Route path="/search" exact component={NoSearchTerm}/>
                         <Route component={NoMatch}/>
                     </Switch>
                 </Router>

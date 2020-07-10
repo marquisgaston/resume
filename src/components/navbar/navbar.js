@@ -14,8 +14,8 @@ class NavbarComponent extends Component {
         return ( 
             <div id="main-navbar-wrapper">
                 <Navbar id="main-navbar"  variant="dark" fixed="top" expand="lg" width="100vw">  
-                         <NavbarBrand/>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <NavbarBrand/>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                          <MainNav/>
                          <NavSearch/>

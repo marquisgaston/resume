@@ -21,11 +21,17 @@ class NavSearch extends Component {
             [event.target.name]: event.target.value
         });
     }
-
-    handleClick = () => {
-        if (this.state.searchText !== null && this.state.searchText.length > 0){
-            this.props.setSearchTerm(this.state.searchText);
-            history.push('/search')
+    handleClick = (event) => {
+        event.preventDefault();
+        if (this.state.searchText && this.state.searchText.length > 0){
+            if (this.state.searchText.toLowerCase() === "resume") {
+                window.open('https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit');
+            } else {
+                this.props.setSearchTerm(this.state.searchText);
+                var one = this.state.searchText.split(" ");
+                var two = one.join("+")
+                history.push(`/search=${two}`)
+            }
         } else {
             return
         }

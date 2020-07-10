@@ -13,7 +13,7 @@ class SearchBar extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-        searchText: "all"
+        searchText: ""
         }
     }
 
@@ -30,12 +30,6 @@ class SearchBar extends Component {
                 window.open('https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit');
             } else {
                 this.props.setSearchTerm(this.state.searchText);
-                // axios
-                //     .get(`https://www.googleapis.com/youtube/v3/search?q=${this.state.searchText}&part=snippet&maxResults=50&key=${process.env.REACT_APP_YT_API_KEY}`)
-                //         .then(res => {
-                //             this.props.pullYoutubeItems(res.data.items)
-                //             console.log("res", res.data.items)
-                //         })
                 var one = this.state.searchText.split(" ");
                 var two = one.join("+")
                 history.push(`/search=${two}`)
