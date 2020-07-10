@@ -3,35 +3,79 @@
 
     .quick-search {
         color: white;
-        background-color: $bg-color;
+        background-color: rgba(0,0,0,.4);
         border-radius: 10px;
         padding: 1em;
-        max-width: 95vw;
+        max-width: 60vw;
+
+        @media only screen and (max-width: $min-tab-width){
+            max-width: 95vw;
+        }
 
         display: grid;
         gap: .5em;
 
         &-item {
+
+            @media only screen and (max-width: $min-phone-width){
+                &-title {
+                    display: none;
+                }
+
+            }
             
             a {
                 display: grid;
                 gap: 0 2em;
+                text-decoration: none;
+                color: white;
 
                 @media only screen and (min-width: $min-tab-width + 1){
                     grid-template-columns: max-content max-content max-content;
-                }
-            }
-        }
+                    font-size: 1.39em;
 
-        a {
-            text-decoration: none;
-            color: white;
+                }
+
+                @media only screen and (max-width: $min-tab-width){
+                    font-size: 1.2em;
+
+                }
+
+                @media only screen and (max-width: $min-phone-width){
+                    font-size: .9em;
+
+                }
+
+                @media only screen and (max-width: 360px){
+                    font-size: .7em;
+
+                }
+                
+            }
         }
     }
 
     .quick-links {
         display: grid;
 
+        @media only screen and (min-width: $min-phone-width){
+            font-size: 4em;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @media only screen and (max-width: $min-tab-width){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media only screen and (max-width: $min-phone-width){
+            font-size: 2em;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media only screen and (max-width: 360px){
+            font-size: 1.4em;
+        }
+
         a {
             text-decoration: none;
             color: white;
@@ -39,16 +83,5 @@
 
         }
 
-        @media only screen and (min-width: $min-tab-width){
-           grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-
-        @media only screen and (max-width: $min-tab-width){
-            grid-template-columns: 1fr 1fr 1fr;
-         }
-
-         @media only screen and (max-width: $min-phone-width){
-            grid-template-columns: 1fr 1fr;
-         }
     }
 }

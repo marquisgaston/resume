@@ -96,9 +96,8 @@ const INITIAL_STATE = {
         {
             title: "Resume",
             subTitle: "My Resume",
-            imageUrl: "https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit",
-            keyWords: ["resume"],
-            class: "resume"
+            url: "https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit",
+            keyWords: ["resume"]
         },
     ]
 }
