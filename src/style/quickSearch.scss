@@ -63,17 +63,17 @@
     .quick-links {
         display: grid;
 
-        @media only screen and (min-width: $min-tabpro-width){
-            font-size: 4em;
-           grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media only screen and (min-width: $min-tabpro-width +1){
+            font-size: 3em;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
 
         @media only screen and (max-width: $min-tab-width){
+            font-size: 2em;
             grid-template-columns: 1fr 1fr 1fr;
         }
 
         @media only screen and (max-width: $min-phone-width){
-            font-size: 2em;
             grid-template-columns: 1fr 1fr;
         }
 
