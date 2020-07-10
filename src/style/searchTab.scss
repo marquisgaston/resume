@@ -8,15 +8,15 @@
 
     &__title {
 
-        @media only screen and (min-width: $min-tab-width){
+        @media only screen and (min-width: $min-tabpro-width){
             font-size: 4em;
         }
 
-        @media only screen and (max-width: $min-tab-width){
+        @media only screen and (max-width: $min-tabpro-width){
             font-size: 2.5em;
         }
 
-        @media only screen and (max-width: 770px){
+        @media only screen and (max-width: $min-tab-width){
             font-size: 2em;
         }
 
