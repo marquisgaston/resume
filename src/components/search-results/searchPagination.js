@@ -27,7 +27,7 @@ class SearchPagination extends Component {
             } else 
             if (pagesList.length > 1){
                 return (
-                    <div className="search-pagination" style={{border: "1px solid white"}}>
+                    <div className="search-pagination">
                         <div style={{display: "flex", justifyContent: "space-between"}}>
                             {pagesToRender.map(item => {
                                 return (

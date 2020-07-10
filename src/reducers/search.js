@@ -1,18 +1,18 @@
 import {
-    PULL_YOUTUBE_ITEMS
+    PULL_EXTRA_ITEMS
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    youtubeItems: [],
+    extraItems: [],
     filteredResumeResults: ["resume results go here"]
 }
 
 export default function (state = INITIAL_STATE, actions){
     switch(actions.type){
-        case PULL_YOUTUBE_ITEMS:
+        case PULL_EXTRA_ITEMS:
             return {
                 ...state,
-                youtubeItems: actions.payload
+                extraItems: actions.payload
             }
 
         default: return state

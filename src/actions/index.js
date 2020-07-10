@@ -4,11 +4,11 @@ import {
 } from './main';
 
 import {
-    pullYoutubeItems
+    pullExtraItems
 } from './search';
 
 export {
     setCurrentPage,
     setSearchTerm,
-    pullYoutubeItems
+    pullExtraItems
 }

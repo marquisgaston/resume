@@ -1,12 +1,12 @@
 import {
-    PULL_YOUTUBE_ITEMS
+    PULL_EXTRA_ITEMS
 } from './types';
 
-export function pullYoutubeItems(searchTerm){
+export function pullExtraItems(results){
 
 
     return {
-        type: PULL_YOUTUBE_ITEMS,
-        payload: searchTerm
+        type: PULL_EXTRA_ITEMS,
+        payload: results
     }
 }

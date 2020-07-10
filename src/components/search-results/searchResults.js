@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import axios from 'axios';
 
 import SearchPagination from './searchPagination';
 
@@ -9,6 +10,15 @@ class SearchResultsPage extends Component {
     state = { 
         pageStart: 0,
         itemsPerPage: 10
+    }
+
+    componentWillMount(){
+        this.props.setSearchTerm("link");
+                axios
+                    .get(`https://jsonplaceholder.typicode.com/posts`)
+                        .then(res => {
+                            this.props.pullExtraItems(res);
+                        })
     }
 
     pageUp = () => {
@@ -31,10 +41,7 @@ class SearchResultsPage extends Component {
 
     componentDidMount() {
         this.props.setCurrentPage("search-results-page");
-        if (this.props.main.searchTerm === null){
-            this.props.setSearchTerm(this.props.match.params.slug.replace("=", "").replace("+", " "))
-            console.log("slug",this.props.match.params.slug.replace("=", "").replace("+"," "),"searchTerm",this.props.main.searchTerm)
-        }
+                                                                                                                                                                                                                  
     }
 
     render() { 
@@ -57,6 +64,9 @@ class SearchResultsPage extends Component {
                 if (this.props.main.searchTerm.toLowerCase() === "all"){
                     this.props.resumeData.resumeItems.map(item => {
                         fullResults.push(item);
+                        if(this.props.search.extraItems.data){
+                            addToFullResults(this.props.search.extraItems.data)
+                        }
                         return item                
                     })
                 } else {
@@ -80,6 +90,9 @@ class SearchResultsPage extends Component {
                     addToFullResults(list1);
                     addToFullResults(list2);
                     addToFullResults(list3);
+                    if (this.props.search.extraItems.data && fullResults.length > 0){
+                        addToFullResults(this.props.search.extraItems.data);
+                    }
                 }
         
             // END RESUME SORT
@@ -90,32 +103,38 @@ class SearchResultsPage extends Component {
         const listToRender = fullResults.slice(this.state.pageStart, this.state.pageStart + this.state.itemsPerPage);
 
         const renderResults = () => {
-            return (
-                listToRender.map(item => {
-                    if(item.title){
-                        return (
-                            <div className="result">
-                                {item.title}
-                            </div>
+            if(listToRender.length <= 0){
+                return "your search returned no results"
+            } else {
+                return (
+                    listToRender.map(item => {
+                        if(item.title){
+                            return (
+                                <div className="result">
+                                    {item.title}
+                                </div>
+                            )
+                        } else
+                        if (item.snippet){
+                            return (
+                                <div className="result">
+                                    {item.snippet.title}
+                                </div>
                         )
-                    } else
-                    if (item.snippet){
-                        return (
-                            <div className="result">
-                                {item.snippet.title}
-                            </div>
-                    )
-
-                    } else {
-                        return (
-                            <div className="result">
-                                {item}
-                            </div>
-                        )
-                    }
-                })
-            )
+    
+                        } else {
+                            return (
+                                <div className="result">
+                                    {item}
+                                </div>
+                            )
+                        }
+                    })
+                )
+            }
         }
+        
+        console.log("res", this.fullResults)
 
         return ( 
             <div className="search-results-page-wrapper page">

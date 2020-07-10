@@ -3,7 +3,7 @@ import { FormControl, Button } from 'react-bootstrap';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-// import axios from 'axios';
+import axios from 'axios';
 import history from '../../history';
 import QuickSearch from './quickSearch';
 
@@ -30,6 +30,11 @@ class SearchBar extends Component {
                 window.open('https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit');
             } else {
                 this.props.setSearchTerm(this.state.searchText);
+                axios
+                    .get(`https://jsonplaceholder.typicode.com/posts`)
+                        .then(res => {
+                            this.props.pullExtraItems(res);
+                        })
                 var one = this.state.searchText.split(" ");
                 var two = one.join("+")
                 history.push(`/search=${two}`)
