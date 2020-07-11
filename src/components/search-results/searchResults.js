@@ -12,15 +12,6 @@ class SearchResultsPage extends Component {
         itemsPerPage: 10
     }
 
-    componentWillMount(){
-        this.props.setSearchTerm("link");
-                axios
-                    .get(`https://jsonplaceholder.typicode.com/posts`)
-                        .then(res => {
-                            this.props.pullExtraItems(res);
-                        })
-    }
-
     pageUp = () => {
         this.setState({
             pageStart: this.state.pageStart + this.state.itemsPerPage
