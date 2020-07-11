@@ -4,6 +4,7 @@ import history from '../../history';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import LoginButton from '../login/login';
 
 class MainNav extends Component {
      state = {  }
@@ -27,6 +28,7 @@ class MainNav extends Component {
                        <NavDropdown.Divider />
                        {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                        </NavDropdown>
+                       {/* <LoginButton/> */}
                   </Nav>
              )
         } else 
@@ -42,6 +44,7 @@ class MainNav extends Component {
                        <NavDropdown.Divider />
                        {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                        </NavDropdown>
+                       {/* <LoginButton/> */}
                   </Nav>
              )
         }
