@@ -14,7 +14,7 @@
         color: white;
 
         @media only screen and (min-width: $min-phone-width){
-            grid-template-columns: max-content max-content auto;
+            grid-template-columns: max-content auto auto;
         }
 
         @media only screen and (max-width: $min-phone-width){
