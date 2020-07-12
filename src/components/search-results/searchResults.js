@@ -70,12 +70,17 @@ class SearchResultsPage extends Component {
                     this.props.resumeData.resumeItems.map(item => {
                         item.keyWords.map(keyword => {
                             if(keyword === this.props.main.searchTerm.toLowerCase()){
-                                list3.push(item)
+                                if(list3.includes(item) || list2.includes(item) || list1.includes(item)){
+                                    return
+                                } else {
+                                    list3.push(item)
+                                }
                             }
                             return keyword
                         })
                         return item
                     })
+                    
         
                     addToFullResults(list1);
                     addToFullResults(list2);
