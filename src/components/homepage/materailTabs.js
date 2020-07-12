@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 import SearchTab from './searchTab';
+import FeaturedTab from './featuredTab/featuredTab';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -71,7 +72,7 @@ export default function SimpleTabs() {
           <SearchTab/>
         </TabPanel>
         <TabPanel value={value} index={1}>
-            Feautred
+            <FeaturedTab/>
         </TabPanel>
       </div>
     </div>

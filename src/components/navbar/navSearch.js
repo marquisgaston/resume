@@ -4,6 +4,7 @@ import history from '../../history';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import axios from 'axios';
 
 class NavSearch extends Component {
     constructor(){
@@ -28,6 +29,11 @@ class NavSearch extends Component {
                 window.open('https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit');
             } else {
                 this.props.setSearchTerm(this.state.searchText);
+                axios
+                    .get(`https://jsonplaceholder.typicode.com/posts`)
+                        .then(res => {
+                            this.props.pullExtraItems(res.data);
+                        })
                 var one = this.state.searchText.split(" ");
                 var two = one.join("+")
                 history.push(`/search=${two}`)

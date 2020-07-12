@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import SearchPagination from './searchPagination';
-import axios from 'axios';
 import ResultItem from './resultItem';
 
 class SearchResultsPage extends Component {
@@ -107,8 +106,6 @@ class SearchResultsPage extends Component {
                 )
             }
         }
-        
-        console.log("res", this.props.main.extraItems)
 
         return ( 
             <div className="search-results-page-wrapper page">

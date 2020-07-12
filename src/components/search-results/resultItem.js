@@ -4,7 +4,6 @@ class ResultItem extends Component {
     state = {  }
 
     renderItems = (listToRender) => {
-        console.log("l", listToRender)
         return (
             listToRender.map(item => {
                 return (

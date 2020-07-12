@@ -5,7 +5,7 @@
     .homeTabs {
         position: relative;
         min-width: 100vw;
-        min-height: 100vh;   
+        min-height: 100vh;
 
         &__front {
             position: absolute;
@@ -13,9 +13,11 @@
             bottom: 0;
             left: 0;
             right: 0;
+            overflow-y: auto; 
 
             &__appBar {
                 background-color: rgba(0,0,0,.4);
+                position: absolute;
             }
     
             // &__tabs {
@@ -34,7 +36,7 @@
             left: 0;
             right: 0;
             background-repeat: no-repeat;               
-            background-size: 100%;
+            background-size: cover;
             filter: brightness(50%);
 
             @media only screen and (min-width: $min-tabpro-width +1){
