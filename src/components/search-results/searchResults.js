@@ -3,11 +3,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import SearchPagination from './searchPagination';
+import axios from 'axios';
+import ResultItem from './resultItem';
 
 class SearchResultsPage extends Component {
     state = { 
         pageStart: 0,
         itemsPerPage: 10
+    }
+
+    componentWillMount(){
+        this.props.setSearchTerm("all");
+        axios
+            .get(`https://jsonplaceholder.typicode.com/posts`)
+                .then(res => {
+                    this.props.pullExtraItems(res.data);
+                })
     }
 
     pageUp = () => {
@@ -53,11 +64,11 @@ class SearchResultsPage extends Component {
                 if (this.props.main.searchTerm.toLowerCase() === "all"){
                     this.props.resumeData.resumeItems.map(item => {
                         fullResults.push(item);
-                        if(this.props.search.extraItems.data){
-                            addToFullResults(this.props.search.extraItems.data)
-                        }
                         return item                
                     })
+                    if(this.props.search.extraItems){
+                        addToFullResults(this.props.search.extraItems)
+                    }
                 } else {
                     const list1 = this.props.resumeData.resumeItems.filter(item => 
                         item.title.toLowerCase() === this.props.main.searchTerm.toLowerCase() 
@@ -79,8 +90,8 @@ class SearchResultsPage extends Component {
                     addToFullResults(list1);
                     addToFullResults(list2);
                     addToFullResults(list3);
-                    if (this.props.search.extraItems.data && fullResults.length > 0){
-                        addToFullResults(this.props.search.extraItems.data);
+                    if (this.props.search.extraItems && fullResults.length > 0){
+                        addToFullResults(this.props.search.extraItems);
                     }
                 }
         
@@ -96,34 +107,12 @@ class SearchResultsPage extends Component {
                 return "your search returned no results"
             } else {
                 return (
-                    listToRender.map(item => {
-                        if(item.title){
-                            return (
-                                <div className="result">
-                                    {item.title}
-                                </div>
-                            )
-                        } else
-                        if (item.snippet){
-                            return (
-                                <div className="result">
-                                    {item.snippet.title}
-                                </div>
-                        )
-    
-                        } else {
-                            return (
-                                <div className="result">
-                                    {item}
-                                </div>
-                            )
-                        }
-                    })
+                    <ResultItem list={listToRender}/>
                 )
             }
         }
         
-        console.log("res", this.fullResults)
+        console.log("res", this.props.main.extraItems)
 
         return ( 
             <div className="search-results-page-wrapper page">
@@ -138,7 +127,7 @@ class SearchResultsPage extends Component {
                 <div>
                     {/* pS: {this.state.pageStart} | iPP: {this.state.itemsPerPage} | cRS: {currentResultsPage} | cP: {currentPaginationNumber} */}
                 </div>
-                <div>
+                <div className="results-wrapper">
                     {renderResults(listToRender)}
                 </div>
             </div>

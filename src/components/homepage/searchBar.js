@@ -33,7 +33,7 @@ class SearchBar extends Component {
                 axios
                     .get(`https://jsonplaceholder.typicode.com/posts`)
                         .then(res => {
-                            this.props.pullExtraItems(res);
+                            this.props.pullExtraItems(res.data);
                         })
                 var one = this.state.searchText.split(" ");
                 var two = one.join("+")

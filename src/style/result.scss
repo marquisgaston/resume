@@ -1,0 +1,40 @@
+.results-wrapper {
+    margin: .5em 2em;
+    display: grid;
+    gap: 1em;
+
+    .result {
+        background-color: rgba(0,0,0,.4);
+
+        display: grid;
+        gap: 1em;
+        padding: .3em;
+        max-width: 95vw;
+        text-decoration: none;
+        color: white;
+
+        @media only screen and (min-width: $min-phone-width){
+            grid-template-columns: max-content max-content auto;
+        }
+
+        @media only screen and (max-width: $min-phone-width){
+            padding-bottom: 1em;
+        }
+
+        &__image {
+            
+            @media only screen and (min-width: $min-phone-width){
+                max-width: 9em;
+            }
+
+            @media only screen and (max-width: $min-phone-width){
+                max-width: 100%;
+            }
+        }
+
+        &__title {
+            display: grid;
+            word-wrap: break-word;
+        }
+    }
+}

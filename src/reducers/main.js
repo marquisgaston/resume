@@ -5,7 +5,8 @@ import {
 
 const INITAIL_STATE = {
     currentPage: null,
-    searchTerm: null
+    searchTerm: null,
+    postUrl: "https://api.dailysmarty.com/posts"
 }
 
 export default function (state = INITAIL_STATE, actions) {
