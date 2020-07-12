@@ -71,7 +71,7 @@ class SearchResultsPage extends Component {
                         item.keyWords.map(keyword => {
                             if(keyword === this.props.main.searchTerm.toLowerCase()){
                                 if(list3.includes(item) || list2.includes(item) || list1.includes(item)){
-                                    return
+                                    return null
                                 } else {
                                     list3.push(item)
                                 }
