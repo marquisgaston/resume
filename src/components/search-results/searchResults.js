@@ -12,15 +12,6 @@ class SearchResultsPage extends Component {
         itemsPerPage: 10
     }
 
-    componentWillMount(){
-        this.props.setSearchTerm("all");
-        axios
-            .get(`https://jsonplaceholder.typicode.com/posts`)
-                .then(res => {
-                    this.props.pullExtraItems(res.data);
-                })
-    }
-
     pageUp = () => {
         this.setState({
             pageStart: this.state.pageStart + this.state.itemsPerPage
@@ -103,8 +94,13 @@ class SearchResultsPage extends Component {
         const listToRender = fullResults.slice(this.state.pageStart, this.state.pageStart + this.state.itemsPerPage);
 
         const renderResults = () => {
-            if(listToRender.length <= 0){
-                return "your search returned no results"
+            if(listToRender.length <= 1){
+                if (listToRender.includes("no search term was entered")){
+                    return "no search term was entered"
+                }
+                else if (listToRender.length <= 0){
+                    return "your search returned no results"
+                }
             } else {
                 return (
                     <ResultItem list={listToRender}/>

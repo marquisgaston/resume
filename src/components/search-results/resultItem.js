@@ -4,6 +4,7 @@ class ResultItem extends Component {
     state = {  }
 
     renderItems = (listToRender) => {
+        console.log("l", listToRender)
         return (
             listToRender.map(item => {
                 return (
@@ -11,9 +12,9 @@ class ResultItem extends Component {
                         <div className="result__image-wrapper">
                             {item.imageUrl ? <img className="result__image" src={item.imageUrl} alt={item.imageUrl}/> : <img className="result__image" src={`https://picsum.photos/1280/720?random=${Math.floor(Math.random()*1000)}`} alt={item.imageUrl}/>}
                         </div>
-                        <div>
+                        <div style={{display: "flex", justifyContent: "center"}}>
                             {item.title ? <div className="result__title">{item.title}</div> : null}
-                            {item.icon ? <i class={item.icon} className="result__title"></i> : null}
+                            {item.icon ? <i class={item.icon} style={{marginLeft: ".6em"}}></i> : null}
                         </div>
                         {item.subTitle ? <div className="result__subTitle">{item.subTitle}</div> : null}
                     </a>
