@@ -9,14 +9,17 @@
 
     @media only screen and (min-width: $min-tabpro-width +1){
         margin-top: 2.2em;
+        padding-top: .5em;
     }
 
     @media only screen and (max-width: $min-tabpro-width){
         margin-top: 2.1em;
+        padding-top: .5em;
     }
     
     @media only screen and (max-width: $min-tab-width){
         margin-top: 3.3em;
+        padding-top: 0;
     }
 }
 

@@ -1,12 +1,13 @@
 .quick-search-wrapper {
     margin-top: 2em;
+    width: 100%;
 
     .quick-search {
         color: white;
         background-color: rgba(0,0,0,.4);
         border-radius: 10px;
         padding: 1em;
-        max-width: 49vw;
+        max-width: 61vw;
         max-height: 60vh;
         overflow-x: hidden;
         overflow-y: auto;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToledoMap from './toledoMap';
+import FooterMain from './footerMain';
 
 class Footer extends Component {
     state = {  }
@@ -11,6 +12,7 @@ class Footer extends Component {
                 </div>
                 <div>
                     <ToledoMap/>
+                    <FooterMain/>
                 </div>
             </div>
          );
