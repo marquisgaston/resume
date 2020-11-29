@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 import HomeTabs from './homeTabs';
+import Projects from "./projects";
 
 class Homepage extends Component {
     state = {  }
@@ -16,6 +17,7 @@ class Homepage extends Component {
         return ( 
             <div className="homepage page">
                 <HomeTabs/>
+                <Projects />
             </div>
          );
     }

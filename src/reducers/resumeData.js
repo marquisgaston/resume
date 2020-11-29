@@ -31,7 +31,7 @@ const INITIAL_STATE = {
         },
         {
             title: "My Resume",
-            url: "https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY",
+            url: "https://docs.google.com/document/d/12tWRa3oBt8-dTngu0yiNt4u2YtZ9J6JiNYMJzMw1dUs/edit",
             icon: "fab fa-google-drive"
         },
         {

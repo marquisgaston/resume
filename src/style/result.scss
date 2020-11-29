@@ -12,6 +12,7 @@
         max-width: 95vw;
         text-decoration: none;
         color: white;
+        justify-content: left;
 
         @media only screen and (min-width: $min-phone-width){
             grid-template-columns: max-content auto auto;

@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import axios from "axios";
 import SearchPagination from './searchPagination';
 import ResultItem from './resultItem';
 
 class SearchResultsPage extends Component {
     state = { 
         pageStart: 0,
-        itemsPerPage: 10
+        itemsPerPage: 10,
+        searchTerm: this.props.match.params.slug.split("=")[1].split("+").join(" ")
     }
 
     pageUp = () => {
@@ -31,6 +33,20 @@ class SearchResultsPage extends Component {
 
     componentDidMount() {
         this.props.setCurrentPage("search-results-page");
+        if (this.props.main.searchTerm === null){
+            this.props.setSearchTerm(this.state.searchTerm);
+
+                if (this.state.searchTerm.toLowerCase() === "resume") {
+                    window.open('https://docs.google.com/document/d/1mWRqgDd30Er4ZvEvIrX7WlwzHiVGRfxAjRn5PNY99FY/edit');
+                } else {
+                    this.props.setSearchTerm(this.state.searchTerm);
+                    axios
+                        .get(`https://jsonplaceholder.typicode.com/posts`)
+                            .then(res => {
+                                this.props.pullExtraItems(res.data);
+                            })
+                }
+    }
                                                                                                                                                                                                                   
     }
 

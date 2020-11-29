@@ -15,11 +15,11 @@ class MainNav extends Component {
      }
 
      renderMainNav = () => {
-        if(this.props.main.currentPage !== "homepage") {
+        if(this.props.main.currentPage === "homepage") {
              return (
                   <Nav className="mr-auto">
                        <Nav.Link onClick={() => {history.push('/')}}>Home</Nav.Link>
-                       <Nav.Link href="#link">Profile</Nav.Link>
+                       <Nav.Link onClick={() => {history.push("/profile")}}>Profile</Nav.Link>
                        <NavDropdown title="Contact" id="basic-nav-dropdown">
                             <NavDropdown.Item ><i className="fas fa-envelope"></i>{this.props.resumeData.yourEmail} </NavDropdown.Item>
                             <NavDropdown.Item ><i className="fas fa-phone-square-alt"></i>{this.phoneNumberDash(this.props.resumeData.yourPhone)}</NavDropdown.Item>
@@ -31,11 +31,26 @@ class MainNav extends Component {
                   </Nav>
              )
         } else 
+        if(this.props.main.currentPage === "profile") {
+          return (
+               <Nav className="mr-auto">
+                    <Nav.Link onClick={() => {history.push('/')}}>Home</Nav.Link>
+                    <NavDropdown title="Contact" id="basic-nav-dropdown">
+                         <NavDropdown.Item ><i className="fas fa-envelope"></i>{this.props.resumeData.yourEmail} </NavDropdown.Item>
+                         <NavDropdown.Item ><i className="fas fa-phone-square-alt"></i>{this.phoneNumberDash(this.props.resumeData.yourPhone)}</NavDropdown.Item>
+                         <NavDropdown.Item href={this.props.resumeData.yourMainSite.link}><i className="fab fa-linkedin"></i> {this.props.resumeData.yourMainSite.name}</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+                    </NavDropdown>
+                    {/* <LoginButton/> */}
+               </Nav>
+          )
+     } else 
         {
              return (
                   <Nav className="mr-auto" id="navbar-nav">
-                       {/* <Nav.Link href="#home">Home</Nav.Link> */}
-                       <Nav.Link href="#link">Profile</Nav.Link>
+                       <Nav.Link onClick={() => {history.push("/")}}>Home</Nav.Link>
+                       <Nav.Link onClick={() => history.push("/profile")}>Profile</Nav.Link>
                        <NavDropdown title="Contact" id="basic-nav-dropdown">
                             <NavDropdown.Item ><i className="fas fa-envelope"></i> {this.props.resumeData.yourEmail} </NavDropdown.Item>
                             <NavDropdown.Item ><i className="fas fa-phone-square-alt"></i> {this.phoneNumberDash(this.props.resumeData.yourPhone)}</NavDropdown.Item>

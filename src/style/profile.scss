@@ -1,0 +1,24 @@
+.profile-wrapper {
+
+    .profile {
+        display: grid;
+        width: 100vw;
+        padding: 1em 2em;
+        grid-template-columns: max-content auto;
+        grid-gap: 1rem;
+
+        @media only screen and (max-width: $min-phone-width +1){
+            padding: 1em 0em;
+
+        }
+
+        .profile-img {
+            img {
+                @media only screen and (max-width: $min-tabpro-width +1){
+                    display: none;
+    
+                }
+            }
+        }
+    }
+}
